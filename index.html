@@ -45,7 +45,7 @@
       overflow: hidden;
       transition: height 0.5s ease;
     }
-    #more1,#more2,#more3{
+    .more{
       display: none;
     }
 
@@ -115,53 +115,6 @@
 </head>
 
 <body>
-  <header class="text-white p-4 position-fixed m-0 z-3 text-center">
-    <nav class="navbar">
-      <div class="container-fluid">
-        <ul class="navbar-nav d-flex flex-row">
-          <li class="nav-item me-4"><a href="#home" class="nav-link active text-white fw-bolder">Home</a></li>
-          <li class="nav-item me-4"><a href="#EventsAndReunions" class="nav-link active text-white fw-bolder">Events and
-              Reunions</a></li>
-          <li class="nav-item me-4"><a href="#alumni-directory" class="nav-link active text-white fw-bolder">Alumni Directory</a></li>
-          <li class="nav-item me-4"><a href="#surveyAndPoll" class="nav-link active text-white fw-bolder">Surveys and Polls</a></li>
-          <li class="nav-item me-4"><a href="#newsletter" class="nav-link active text-white fw-bolder">Newsletters</a>
-          </li>
-          <li class="nav-item me-4"><a href="#contact-me" class="nav-link active text-white fw-bolder">Contact Us</a>
-          </li>
-          <li class="nav-item me-4"><a href="#" class="nav-link active text-white fw-bolder">Profile Management</a></li>
-        </ul>
-        <button class="navbar-toggler border-white" data-bs-toggle="collapse" data-bs-target="#collapseContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapseContent">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a href="">Networking</a></li>
-            <li class="nav-item"><a href="">Mentorship</a></li>
-            <li class="nav-item"><a href="">Discussion Forums</a></li>
-            <li class="nav-item"><a href="">Resources and Publications</a></li>
-            <li class="nav-item"><a href="">Volunteer Opportunities</a></li>
-            <li class="nav-item"><a href="">Webinars and Online Courses</a></li>
-            <li class="nav-item"><a href="">Surveys and Feedback</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Home/ Hero Section -->
-  <section class="container-fluid mb-5" id="home"
-    style="background-image: url('hero.png'); background-size: cover; background-position: center; background-opacity: 0.8; height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center;">
-    <div class="p-4 rounded-4 pema">
-      <h1>Royal Academy Alumni Network: Bridging Past and Future</h1>
-      <h5 style="font-size: 1.2rem;">Welcome to the Royal Academy Hub! Immerse yourself in a dynamic community where the
-        spirit of excellence extends far beyond our historic halls. Reconnect with fellow alumni, discover fresh avenues
-        for growth, and stay updated on the latest innovations and groundbreaking research emanating from the Royal
-        Academy.</h5>
-    </div>
-  </section>
-  <!-- Home/Hero Section End Here -->
-
-  <!-- Events and Reunion Section -->
   <section id="EventsAndReunions" class="mb-5">
     <!-- Events -->
     <h1>Upcoming Events</h1>
@@ -179,7 +132,7 @@
               <h2>Intra School Tournament</h2>
               <span>2024-07-02 at 14:10</span>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel erisque enim ligula venenatis dolor.<span id="dots1">...</span>
-                <span id="more1"> Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                <span id="more1" class="more"> Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
               <button onclick="myFunction('dots1', 'more1', 'event1','cardHolder1')" id="myBtn1" class="btn btn-primary read-more-btn">Read more</button>
             </div>
           </div>
@@ -194,7 +147,7 @@
               <h2>Intra School Tournament</h2>
               <span>2024-07-02 at 14:10</span>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel erisque enim ligula venenatis dolor.<span id="dots2">...</span>
-                <span id="more2"> Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                <span id="more2" class="more"> Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
               <button onclick="myFunction('dots2', 'more2', 'event2', 'cardHolder2')" id="myBtn2" class="btn btn-primary read-more-btn">Read more</button>
             </div>
           </div>
@@ -208,7 +161,7 @@
               <h2>Intra School Tournament</h2>
               <span>2024-07-02 at 14:10</span>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel erisque enim ligula venenatis dolor.<span id="dots3">...</span>
-                <span id="more3"> Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                <span id="more3" class="more"> Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
               <button onclick="myFunction('dots3', 'more3', 'event3', 'cardHolder3')" id="myBtn3" class="btn btn-primary read-more-btn">Read more</button>
             </div>
           </div>
