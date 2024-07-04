@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Opportunities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar a.logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar nav ul li {
+            margin-left: 20px;
+        }
+
+        .navbar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .intro h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .tabs {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs .tablink {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .tabs .tablink:hover, .tabs .tablink.active {
+            background-color: #555;
+        }
+
+        .tabcontent {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            display: none; /* Initially hide all tab contents */
+        }
+
+        .tabcontent.active {
+            display: block; /* Display active tab content */
+        }
+
+        .tabcontent h2 {
+            margin-top: 0;
+        }
+
+        .volunteer-list, .volunteer-dashboard {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .volunteer-item {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .volunteer-item h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .volunteer-item p {
+            margin: 5px 0;
+        }
+
+        .volunteer-item button {
+            margin-top: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .volunteer-item button:hover {
+            background-color: #555;
+        }
+
+        .volunteer-signup {
+            display: none; /* Initially hide sign-up form */
+            flex-direction: column;
+        }
+
+        .volunteer-signup.active {
+            display: flex; /* Display sign-up form when active */
+        }
+
+        .volunteer-signup label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .volunteer-signup input[type="text"], .volunteer-signup textarea, .volunteer-signup select {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .volunteer-signup button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .volunteer-signup button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">Alumni Network Portal</a>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="mentorship.html">Mentorship</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Volunteer Opportunities</h1>
+            <p>Engage with the community by participating in various volunteer activities.</p>
+        </section>
+
+        <section class="tabs">
+            <button class="tablink active" onclick="openTab(event, 'Opportunities')">Available Opportunities</button>
+            <button class="tablink" onclick="openTab(event, 'Dashboard')">My Volunteer Dashboard</button>
+        </section>
+
+        <section id="Opportunities" class="tabcontent active">
+            <h2>Available Volunteer Opportunities</h2>
+            <div class="volunteer-list">
+                <div class="volunteer-item">
+                    <h3>Mentoring Current Students</h3>
+                    <p>Objective: Guide and support current students in their academic and career pursuits.</p>
+                    <p>Requirements: Alumni with at least 5 years of experience in their field.</p>
+                    <p>Time Commitment: 2-3 hours per month.</p>
+                    <button>Sign Up</button>
+                </div>
+                <div class="volunteer-item">
+                    <h3>Organizing Alumni Events</h3>
+                    <p>Objective: Help organize and manage alumni events and reunions.</p>
+                    <p>Requirements: Alumni with event planning experience.</p>
+                    <p>Time Commitment: 5-10 hours per event.</p>
+                    <button>Sign Up</button>
+                </div>
+                <div class="volunteer-item">
+                    <h3>Community Service Projects</h3>
+                    <p>Objective: Participate in community service activities organized by the alumni network.</p>
+                    <p>Requirements: All alumni and students are welcome to participate.</p>
+                    <p>Time Commitment: Varies by project.</p>
+                    <button>Sign Up</button>
+                </div>
+                <!-- Repeat for other volunteer opportunities -->
+            </div>
+        </section>
+
+        <section id="Dashboard" class="tabcontent">
+            <h2>My Volunteer Dashboard</h2>
+            <div class="volunteer-dashboard">
+                <!-- This section will display user-specific volunteer activities -->
+            </div>
+        </section>
+
+        <section id="SignUp" class="tabcontent volunteer-signup">
+            <h2>Sign Up for a Volunteer Opportunity</h2>
+            <form action="signup_volunteer" method="POST">
+                <label for="activity">Select Activity:</label>
+                <select id="activity" name="activity" required>
+                    <option value="mentoring">Mentoring Current Students</option>
+                    <option value="event_organization">Organizing Alumni Events</option>
+                    <option value="community_service">Community Service Projects</option>
+                    <!-- Add more options as needed -->
+                </select>
+                
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Why do you want to volunteer?</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Alumni Network Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // By default, open the Available Opportunities tab
+        document.getElementById("Opportunities").classList.add("active");
+    </script>
+</body>
+</html>

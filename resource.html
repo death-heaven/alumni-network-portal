@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Publication</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar a.logo {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar nav ul li {
+            margin-left: 20px;
+        }
+
+        .navbar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .intro h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .tabs {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs .tablink {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .tabs .tablink:hover, .tabs .tablink.active {
+            background-color: #555;
+        }
+
+        .tabcontent {
+            display: none;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .tabcontent h2 {
+            margin-top: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form input[type="text"], form select, form textarea, form input[type="file"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        .resource-list, .resource-library {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .resource-item {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .resource-item h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .resource-item p {
+            margin: 5px 0;
+        }
+
+        .resource-item button {
+            margin-top: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .resource-item button:hover {
+            background-color: #555;
+        }
+
+        .search-filter {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .search-filter input[type="text"], .search-filter select, .search-filter button {
+            margin-right: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-filter button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-filter button:hover {
+            background-color: #555;
+        }
+
+        .comment-section {
+            margin-top: 20px;
+        }
+
+        .comment-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .comment-section form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .comment-section form input[type="text"], .comment-section form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .comment-section form button {
+            align-self: flex-start;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .comment-section form button:hover {
+            background-color: #555;
+        }
+
+        .comments {
+            margin-top: 20px;
+        }
+
+        .comment {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .comment p {
+            margin: 0 0 10px 0;
+        }
+
+        .comment-reply {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="index.html" class="logo">Alumni Network Portal</a>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="mentorship.html">Mentorship</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Resource Publication</h1>
+            <p>Share your articles, research papers, blogs, and more with the community.</p>
+        </section>
+
+        <section class="tabs">
+            <button class="tablink" onclick="openTab(event, 'Publish')">Publish a Resource</button>
+            <button class="tablink" onclick="openTab(event, 'Manage')">Manage Resources</button>
+            <button class="tablink" onclick="openTab(event, 'Library')">Resource Library</button>
+        </section>
+
+        <section id="Publish" class="tabcontent">
+            <h2>Publish a Resource</h2>
+            <form action="publish_resource" method="POST" enctype="multipart/form-data">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+                
+                <label for="type">Type:</label>
+                <select id="type" name="type" required>
+                    <option value="article">Article</option>
+                    <option value="research">Research Paper</option>
+                    <option value="blog">Blog Post</option>
+                    <option value="video">Video</option>
+                </select>
+                
+                <label for="content">Content:</label>
+                <textarea id="content" name="content" required></textarea>
+                
+                <label for="file">Upload File (optional):</label>
+                <input type="file" id="file" name="file">
+                
+                <button type="submit">Publish</button>
+            </form>
+        </section>
+
+        <section id="Manage" class="tabcontent">
+            <h2>Manage Your Resources</h2>
+            <div class="resource-list">
+                <div class="resource-item">
+                    <h3>Resource Title</h3>
+                    <p>Type: Article</p>
+                    <p>Status: Published</p>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
+                <!-- Repeat for all user's resources -->
+            </div>
+        </section>
+
+        <section id="Library" class="tabcontent">
+            <h2>Resource Library</h2>
+            <div class="search-filter">
+                <input type="text" placeholder="Search by title...">
+                <select>
+                    <option value="">Filter by type</option>
+                    <option value="article">Article</option>
+                    <option value="research">Research Paper</option>
+                    <option value="blog">Blog Post</option>
+                    <option value="video">Video</option>
+                </select>
+                <button>Search</button>
+            </div>
+            <div class="resource-library">
+                <div class="resource-item">
+                    <h3>Resource Title</h3>
+                    <p>Type: Article</p>
+                    <p>Published by: Alumni Name</p>
+                    <p>Date: 2023-06-20</p>
+                    <button>View</button>
+                </div>
+                <!-- Repeat for all available resources -->
+            </div>
+        </section>
+
+        <section id="Collaborate" class="tabcontent">
+            <h2>Collaboration Features</h2>
+            <div class="comment-section">
+                <h3>Comments</h3>
+                <form id="commentForm">
+                    <label for="commentText">Add a Comment:</label>
+                    <textarea id="commentText" rows="4" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <div class="comments">
+                    <div class="comment">
+                        <p><strong>Alumni Name:</strong> This is a comment.</p>
+                        <button class="replyButton">Reply</button>
+                        <div class="comment-reply">
+                            <form>
+                                <label for="replyText">Your Reply:</label>
+                                <textarea id="replyText" rows="2" required></textarea>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Repeat for all comments -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Alumni Network Portal. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        document.getElementsByClassName('tablink')[0].click();
+
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var commentText = document.getElementById('commentText').value;
+            var commentsSection = document.querySelector('.comments');
+            var newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = '<p><strong>You:</strong> ' + commentText + '</p><button class="replyButton">Reply</button>';
+            commentsSection.appendChild(newComment);
+            document.getElementById('commentForm').reset();
+        });
+
+        document.querySelector('.comments').addEventListener('click', function(event) {
+            if (event.target.classList.contains('replyButton')) {
+                var replyForm = event.target.nextElementSibling;
+                replyForm.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
